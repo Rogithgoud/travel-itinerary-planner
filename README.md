@@ -1,5 +1,7 @@
 ## Travel Itinerary Planner with AI
 
+**Deployed Project:** [Live Demo](https://rogithgoud.github.io/travel-itinerary-planner/)
+
 # Overview
 This project is a Travel Itinerary Planner built using the MERN stack and Google Gemini API. It allows users to enter travel details such as destination, dates, and preferences, and generates a day-wise travel itinerary using AI. The generated itinerary is stored in MongoDB, displayed in the UI, visualized on a map,and can be exported as a PDF.The focus of this project is on clean architecture, practical AI integration, and clear data flow, rather than heavy UI design or overengineering.
 
