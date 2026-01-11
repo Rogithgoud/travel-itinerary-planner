@@ -6,7 +6,7 @@ const connectDB = require("./config/db");
 const app = express();
 
 // connect DB
-//connectDB();
+connectDB();
 
 // ✅ STEP 1: enable CORS FIRST
 app.use(cors());
@@ -20,6 +20,11 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.send("Travel Itinerary Planner Backend is running");
 });
+
+app.get("/health", (req, res) => {
+  res.json({ status: "OK" });
+});
+
 
 const itineraryRoutes = require("./routes/itineraryRoutes");
 app.use("/api/itinerary", itineraryRoutes);
