@@ -20,7 +20,16 @@ const createItinerary = async (req, res) => {
             preferences
         });
         //parse AI JSON response
-        const parsedItinerary=JSON.parse(aiResponse);
+        let parsedItinerary;
+        try {
+             parsedItinerary = JSON.parse(aiResponse);
+        }    catch (err) {
+             console.error("Invalid JSON from Gemini:", aiResponse);
+             return res.status(500).json({
+           message: "AI returned invalid JSON. Please try again.",
+  });
+}
+
         // save itinerary to DB
         const itinerary = await Itinerary.create({
             user: user._id,
